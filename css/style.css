@@ -1,0 +1,66 @@
+:root {
+    --primary-color: #ffead2;
+    --red-color: #e73656;
+    --blue-color: #00adb2;
+    --yellow-color: #ff9d00;
+    --text-color: #293340;
+}
+
+nav{
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100px;
+    max-height: 300px;
+    box-shadow: #505357 4px 4px 15px;
+    
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar-logo{
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(2px 2px 2px #919191);
+}
+
+.user-box{
+    position: relative;
+    width: 140px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+.user-box img{
+    margin-top: 1px;
+    padding: 2px;
+    margin-right: -26px;
+    border-radius: 50%;
+    width: 40px;
+    height: auto;
+}
+.dropdown-menu {
+    margin-top: -30px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    min-width: 160px;
+    
+    z-index: 1;
+  }
+.dropdown-menu a {
+    margin: 15px;
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    
+}

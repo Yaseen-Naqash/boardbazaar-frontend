@@ -1,0 +1,217 @@
+
+
+
+
+
+:root {
+    --primary-color: #ffead2;
+    --red-color: #e73656;
+    --blue-color: #00adb2;
+    --yellow-color: #ff9d00;
+    --text-color: #293340;
+  }
+  
+  /* search */
+  
+
+
+.search-box {
+    display: inline-flex;
+    box-shadow: var(--red-color) 4px 4px 0 0;
+    background-color: var(--primary-color) ;
+    position: relative;
+  
+    height: 40px; /* Reduced height */
+    border-radius: 80px; /* Adjusted to match new height */
+    transition: background-color 0.4s, transform 0.4s ,box-shadow 0.4s;
+    
+    
+  }
+  .search-box:hover{
+    background-color: #fff;
+    transform: scale(1.07);
+    box-shadow: var(--red-color) 7px 7px 0 0;
+  }
+  .search-icon, .go-icon {
+    position: absolute;
+    top: 0;
+    height: 40px; /* Reduced height */
+    width: 68px; /* Adjusted width proportionally */
+    line-height: 40px; /* Adjusted to match new height */
+    text-align: center;
+  }
+  .search-icon {
+    color: var(--red-color);
+    left: 0;
+    pointer-events: none;
+    font-size: 1.22em;
+    will-change: transform;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform-origin: center center;
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -o-transform-origin: center center;
+    transition: transform 400ms 220ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -webkit-transition: transform 400ms 220ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -moz-transition: transform 400ms 220ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -o-transition: transform 400ms 220ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  }
+  .si-rotate {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  .go-icon {
+    color: var(--red-color);
+    right: 0;
+    pointer-events: none;
+    font-size: 1.38em;
+    will-change: opacity;
+    cursor: default;
+    opacity: 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transition: opacity 190ms ease-out, transform 260ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -webkit-transition: opacity 190ms ease-out, transform 260ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -moz-transition: opacity 190ms ease-out, transform 260ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -o-transition: opacity 190ms ease-out, transform 260ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  }
+  .go-in {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    transition: opacity 190ms ease-out, transform 260ms 20ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -webkit-transition: opacity 190ms ease-out, transform 260ms 20ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -moz-transition: opacity 190ms ease-out, transform 260ms 20ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    -o-transition: opacity 190ms ease-out, transform 260ms 20ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  }
+  .search-border {
+  
+    display: block;
+    width: auto;
+  
+    height: 40px; /* Reduced height */
+    -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+  }
+  .border {
+    
+    fill: none;
+    stroke: var(--red-color);
+    stroke-width: 10;
+    stroke-miterlimit: 15;
+    
+  }
+  .border {
+    stroke-dasharray: 740;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+    -webkit-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+    -moz-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+    -o-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+  }
+  .border-searching .border {
+    stroke-dasharray: 740;
+    stroke-dashoffset: 459;
+    transition: stroke-dashoffset 650ms cubic-bezier(0.755, 0.150, 0.205, 1.000);
+    -webkit-transition: stroke-dashoffset 650ms cubic-bezier(0.755, 0.150, 0.205, 1.000);
+    -moz-transition: stroke-dashoffset 650ms cubic-bezier(0.755, 0.150, 0.205, 1.000);
+    -o-transition: stroke-dashoffset 650ms cubic-bezier(0.755, 0.150, 0.205, 1.000);
+  }
+  #search {
+    flex-grow: 1;
+    font-family:'Teshrin-bold';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 80px; /* Adjusted to match new height */
+    border: none;
+    background: rgba(255,255,255,0);
+    padding: 0 45px 0 45px; /* Adjusted padding to match new size */
+    color: var(--red-color);
+    font-size: 1.32em;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    outline: none;
+  }
+  #search::-webkit-input-placeholder {
+    color: var(--red-color) !important;
+  }
+  #search::-moz-placeholder {
+    color: var(--red-color) !important;
+  }
+  #search:-ms-input-placeholder {
+    color: var(--red-color) !important;
+  }
+  #search::-ms-input-placeholder {
+    color: var(--red-color) !important;
+  }
+  #search::placeholder {
+    color: var(--red-color)!important;
+    /* Specify the font properties for the placeholder text */
+    font-family: 'Teshrin-bold'; /* Use your desired font family */
+  }
+  #search::-moz-selection {
+    color: #FFFFFF;
+    background: var(--red-color);
+  }
+  #search::selection {
+    color: #FFFFFF;
+    background: var(--red-color);
+  }
+  /* end of search */
+
+
+  
+/* button 74 */
+
+.button-74 {
+    background-color:var(--primary-color);
+    border: 2px solid var(--red-color);
+    border-radius: 30px;
+    box-shadow: var(--red-color) 4px 4px 0 0;
+    color: var(--red-color);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    transition: background-color 0.4s, transform 0.4s ,box-shadow 0.4s;
+  }
+  
+  .button-74:hover {
+    transform: scale(1.07);
+    background-color: #fff;
+    box-shadow: var(--red-color) 7px 7px 0 0;
+  }
+  
+  .button-74:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+  
+  @media (min-width: 768px) {
+    .button-74 {
+      min-width: 120px;
+      padding: 0 25px;
+    }
+  }

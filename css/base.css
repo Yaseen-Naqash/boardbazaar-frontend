@@ -1,0 +1,73 @@
+:root {
+    --primary-color: #ffead2;
+    --red-color: #e73656;
+    --blue-color: #00adb2;
+    --yellow-color: #ff9d00;
+    --text-color: #293340;
+  }
+
+  /* fonts */
+  @font-face {
+    font-family: 'Teshrin-heavy';
+    src: url('../fonts/TeshrinAR+LT-Heavy.otf') format('opentype'); 
+  }
+  @font-face {
+    font-family: 'Teshrin-bold';
+    src: url('../fonts/TeshrinAR+LT-Bold.otf') format('opentype'); 
+    font-weight: bold; 
+  }
+  @font-face {
+    font-family: 'Teshrin-regular';
+    src: url('../fonts/TeshrinAR+LT-Regular.otf') format('opentype'); 
+    font-weight: bold; 
+  }
+  @font-face {
+    font-family: 'saad';
+    src: url('../fonts/Saad.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  
+  /* basics */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  html{
+    direction: rtl; 
+  
+  }
+
+  input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    font-family:'Teshrin-regular';
+  }
+
+  body {
+    /* prevent selecting text */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version */
+
+      background-image: url(../images/background.jpg);
+      color: black;
+      font-family: 'Teshrin-bold';
+      line-height: 1.6;
+      text-align: right;
+      overflow-x: hidden;
+  }
+  h1,h2,h3,h4,h5{
+    font-family: 'Teshrin-bold';
+  }
+  p{
+    font-family: 'Teshrin-regular';
+  }
+  main {
+    background-color: #293340;
+    position: relative;
+    margin: 20px
+  }
+  
