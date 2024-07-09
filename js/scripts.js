@@ -29,19 +29,32 @@ $(document).ready(function(){
 
 // userbox dropdown menu
 document.addEventListener('DOMContentLoaded', function() {
-    var userBox = document.querySelector('.button-74.user-box');
-    var dropdownMenu = document.querySelector('.dropdown-menu');
+    // Select all user boxes and dropdown menus
+    var userBoxes = document.querySelectorAll('.user-box');
+    var dropdownMenus = document.querySelectorAll('.dropdown-menu');
 
-    userBox.addEventListener('click', function() {
-        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-    });
+    userBoxes.forEach(function(userBox, index) {
+        var dropdownMenu = dropdownMenus[index];
 
-    // Close the dropdown if the user clicks outside of it
-    document.addEventListener('click', function(event) {
-        if (!userBox.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.style.display = 'none';
-        }
+        userBox.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent the event from bubbling up
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        document.addEventListener('click', function(event) {
+            if (!userBox.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
     });
+});
+
+// JavaScript (or jQuery) for sidebar toggle functionality
+$(document).ready(function() {
+  $('.sidebar-toggle').click(function() {
+      $('.sidebar').toggleClass('sidebar-open');
+  });
 });
 
 

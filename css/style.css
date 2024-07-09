@@ -9,7 +9,8 @@
 nav{
     background-color: var(--primary-color);
     width: 100%;
-    height: 100px;
+    height: auto;
+    padding: 12px 45px;
     max-height: 300px;
     box-shadow: #505357 4px 4px 15px;
     
@@ -22,7 +23,24 @@ nav{
     justify-content: space-around;
     align-items: center;
 }
+
+.nav-left{
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.nav-right{
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 .navbar-logo{
+    
     max-width: 320px;
     height: auto;
     display: block;
@@ -30,37 +48,138 @@ nav{
     filter: drop-shadow(2px 2px 2px #919191);
 }
 
+.navbar-links{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    gap: 15px;
+    justify-content: space-between;
+
+}
 .user-box{
     position: relative;
     width: 140px;
-    height: auto;
+    height: fit-content;
+    padding: 1px 1px 1px 12px;
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
     }
 .user-box img{
-    margin-top: 1px;
-    padding: 2px;
-    margin-right: -26px;
+    
     border-radius: 50%;
     width: 40px;
     height: auto;
 }
+
 .dropdown-menu {
-    margin-top: -30px;
+    margin-top: 10px;
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
     background-color: transparent;
-    min-width: 160px;
-    
+    width: auto;    
     z-index: 1;
   }
-.dropdown-menu a {
-    margin: 15px;
+  .dropdown-menu a {
     display: block;
+    margin: 10px; /* Adjust margin as needed */
     width: fit-content;
     text-decoration: none;
+    white-space: nowrap;
+}
+
+
+/* CSS for sidebar and toggle button */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 250px;
+    height: 100vh;
+    padding: 10px;
+    transition: right 0.5s ease; 
+    display: inline;
+    box-shadow: 0px 0px 65px rgb(0, 0, 0);
+    transition: 0.5s;
+    background-color: var(--primary-color);
+    z-index: 1000;
+    overflow: hidden;
+}
+.first-row{
+    
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 5px;
+}
+.sidebar > *{
+   
+    margin: 8px;
+
+}
+.sidebar-open {
+    right: 0; /* Show the sidebar */
+}
+
+.sidebar-toggle {
+    display: none; /* Hide toggle button by default on larger screens */
+}
+.slidebar-button{
+    color: #e73656;
+}
+
+.sidebar-header{
+    width: auto;
+    height: 93px;
+    margin: -10px;
+    filter: drop-shadow(3px 3px 2px #919191);
+
+    
+}
+.sidebar-footer{
+    filter: drop-shadow(3px 3px 2px #919191);
+
+    width: 260px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: -8px;
+    margin-bottom: -8px;
+    
+}
+@media screen and (max-width: 630px) {
+    nav{
+        padding: 12px 5px;
+    }
+    .navbar-logo{
+        max-width: 270px;
+        background-color: var(--primary-color);
+        border-radius: 15px;
+    }
+    .navbar-links{
+        display: none;
+    
+    }
+    .sidebar-toggle {
+        padding: 12px 8px;
+        background-color: var(--primary-color);
+        border-radius: 4px;
+        
+        display: block; /* Show toggle button on smaller screens */
+        top: 10px;
+        right: 10px;
+        
+        cursor: pointer;
+        color: #e73656;
+        z-index: 5;
+        
+    }
+
     
 }
