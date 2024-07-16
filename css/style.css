@@ -40,7 +40,6 @@ nav{
     right: 0;
 }
 .navbar-logo{
-    
     max-width: 320px;
     height: auto;
     display: block;
@@ -76,15 +75,15 @@ nav{
 }
 
 .dropdown-menu {
+    
     margin-top: 10px;
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
     background-color: transparent;
     width: auto;    
-    z-index: 1;
+    z-index: 1001;
   }
+  
   .dropdown-menu a {
     display: block;
     margin: 10px; /* Adjust margin as needed */
@@ -107,16 +106,10 @@ nav{
     box-shadow: 0px 0px 65px rgb(0, 0, 0);
     transition: 0.5s;
     background-color: var(--primary-color);
-    z-index: 1000;
+    z-index: 100;
     overflow: hidden;
 }
-.first-row{
-    
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin: 5px;
-}
+
 .sidebar > *{
    
     margin: 8px;
@@ -129,10 +122,37 @@ nav{
 .sidebar-toggle {
     display: none; /* Hide toggle button by default on larger screens */
 }
+
 .slidebar-button{
     color: #e73656;
 }
-
+.slidebar-links{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+    scrollbar-color: var(--red-color) var(--primary-color);
+    padding: 7px;
+    border: 2px solid var(--red-color);
+    border-radius: 30px;
+}
+.other-links{
+    padding-right: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.slidebar-links::-webkit-scrollbar-track{
+    background: transparent;
+}
+.slidebar-links::-webkit-scrollbar-thumb{
+    background-color: var(--red-color);
+    border-radius: 5px;
+}
+.slidebar-links::-webkit-scrollbar{
+    width: 4px;
+}
 .sidebar-header{
     width: auto;
     height: 93px;
@@ -142,15 +162,21 @@ nav{
     
 }
 .sidebar-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    background-color: var(--primary-color);
+    margin-left: -8px;
+    margin-bottom: -12px;
+    
+}
+.sidebar-footer img{
     filter: drop-shadow(3px 3px 2px #919191);
 
     width: 260px;
     height: auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin-left: -8px;
-    margin-bottom: -8px;
+    
     
 }
 @media screen and (max-width: 630px) {
@@ -158,27 +184,33 @@ nav{
         padding: 12px 5px;
     }
     .navbar-logo{
+        border: solid 3px var(--red-color);
+
         max-width: 270px;
         background-color: var(--primary-color);
         border-radius: 15px;
     }
     .navbar-links{
         display: none;
-    
     }
     .sidebar-toggle {
+        position: relative;
         padding: 12px 8px;
         background-color: var(--primary-color);
         border-radius: 4px;
         
         display: block; /* Show toggle button on smaller screens */
-        top: 10px;
-        right: 10px;
+        
         
         cursor: pointer;
         color: #e73656;
         z-index: 5;
         
+    }
+    .slidebar-cross{
+        position: absolute;
+        left: 0;
+        top: 65px;
     }
 
     

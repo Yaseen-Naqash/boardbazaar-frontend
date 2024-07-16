@@ -29,25 +29,48 @@ $(document).ready(function(){
 
 // userbox dropdown menu
 document.addEventListener('DOMContentLoaded', function() {
-    // Select all user boxes and dropdown menus
-    var userBoxes = document.querySelectorAll('.user-box');
-    var dropdownMenus = document.querySelectorAll('.dropdown-menu');
+  var userBoxes = document.querySelectorAll('.user-box');
+  var dropdownMenus = document.querySelectorAll('.dropdown-menu');
+  var otherLinks = document.querySelector('.other-links');
 
-    userBoxes.forEach(function(userBox, index) {
-        var dropdownMenu = dropdownMenus[index];
+  userBoxes.forEach(function(userBox, index) {
+      var dropdownMenu = dropdownMenus[index];
 
-        userBox.addEventListener('click', function(event) {
-            event.stopPropagation(); // Prevent the event from bubbling up
-            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-        });
+      userBox.addEventListener('click', function(event) {
+          event.stopPropagation(); // Prevent the event from bubbling up
 
-        // Close the dropdown if the user clicks outside of it
-        document.addEventListener('click', function(event) {
-            if (!userBox.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.style.display = 'none';
-            }
-        });
-    });
+          // Toggle the display of the dropdown menu
+          var isDropdownVisible = dropdownMenu.style.display === 'block';
+          dropdownMenu.style.display = isDropdownVisible ? 'none' : 'block';
+
+          // Toggle the display of the other-links element
+          if (otherLinks) {
+              otherLinks.style.display = isDropdownVisible ? 'flex' : 'none';
+          }
+
+          // Change the background color of the user box
+          if (!isDropdownVisible) {
+              userBox.style.backgroundColor = 'white';
+          } else {
+              userBox.style.backgroundColor = '';
+          }
+      });
+
+      // Close the dropdown if the user clicks outside of it
+      document.addEventListener('click', function(event) {
+          if (!userBox.contains(event.target) && !dropdownMenu.contains(event.target)) {
+              dropdownMenu.style.display = 'none';
+
+              // Show the other-links element when clicking outside
+              if (otherLinks) {
+                  otherLinks.style.display = 'flex';
+              }
+
+              // Remove the background color of the user box
+              userBox.style.backgroundColor = '';
+          }
+      });
+  });
 });
 
 // JavaScript (or jQuery) for sidebar toggle functionality
