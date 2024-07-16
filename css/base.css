@@ -65,6 +65,11 @@
   p{
     font-family: 'Teshrin-regular';
   }
+  a{
+    color: inherit; /* Inherit color from parent */
+    font-size: inherit; /* Inherit font size from parent */
+    text-decoration: none; /* Inherit text decoration from parent */
+  }
   main {
     background-color: #293340;
     position: relative;

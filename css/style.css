@@ -215,3 +215,19 @@ nav{
 
     
 }
+/* navbar end */
+/* hero */
+.hero{
+    position: relative;
+    height: 85vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+    gap: 10px;
+}
+.deal-banner{
+    background-color: #00adb2;
+}
+.middle-banner{
+    background-color: #e73656;
+}

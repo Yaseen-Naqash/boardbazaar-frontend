@@ -79,7 +79,42 @@ $(document).ready(function() {
       $('.sidebar').toggleClass('sidebar-open');
   });
 });
+// scrolling text
+document.addEventListener('DOMContentLoaded', function() {
+  const textElement = document.querySelector('.card .titlebox h3');
+  if (textElement.scrollWidth > textElement.clientWidth) {
+    textElement.classList.add('scrolling');
+  } else {
+    textElement.classList.remove('scrolling');
+  }
+});
+// image swichter for deals
+document.addEventListener("DOMContentLoaded", function() {
+  const imageHolders = document.querySelectorAll(".image-holder");
 
+  imageHolders.forEach(function(imageHolder) {
+    const images = imageHolder.querySelectorAll("img");
+    let hoverInterval;
+
+    function switchImage(index) {
+      images.forEach(img => img.classList.remove("active"));
+      images[index].classList.add("active");
+    }
+
+    imageHolder.addEventListener("mouseenter", function() {
+      let currentIndex = 0;
+      hoverInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        switchImage(currentIndex);
+      }, 1000); // Switch every 2 seconds
+    });
+
+    imageHolder.addEventListener("mouseleave", function() {
+      clearInterval(hoverInterval);
+      switchImage(0); // Reset to first image
+    });
+  });
+});
 
 // test
 document.addEventListener('DOMContentLoaded', () => {
