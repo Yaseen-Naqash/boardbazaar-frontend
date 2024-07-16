@@ -43,13 +43,13 @@
     left: 0;
     width: 100%;
     height: 250px;
-    object-fit: cover; /* Ensures the image covers the card while maintaining aspect ratio */
-    border-radius: 12px; /* Slightly smaller radius to fit inside the card */
-    opacity: 0; /* Initially hide all images */
-    transition: opacity 0.5s ease; /* Smooth transition effect */
+    object-fit: cover; 
+    border-radius: 12px; 
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
 }
 .image-holder img.active {
-    opacity: 1; /* Show active image */
+    opacity: 1; 
     
   }
   
@@ -57,7 +57,7 @@
     position: absolute;
     top: 49%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the box */
+    transform: translate(-50%, -50%);
     width: fit-content;
     height: 32px;
     backdrop-filter: blur(3px);
@@ -70,8 +70,8 @@
     color: aliceblue;
     font-weight: bold;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
     z-index: 2;
     transition: box-shadow 0.3s ease;
     transition: scale 0.3s ease;
@@ -89,14 +89,14 @@
   }
   
   .card .titlebox h3 {
-    width: calc(100% - 20px); /* Adjust width as necessary */
-    white-space: nowrap; /* Prevents text from wrapping */
-    overflow: hidden; /* Hides any content that overflows */
+    width: calc(100% - 20px); 
+    white-space: nowrap; 
+    overflow: hidden; 
     text-overflow: ellipsis;
     display: inline-block;
-    line-height: 35px; /* Vertically center the text */
+    line-height: 35px; 
     vertical-align: middle;
-    transition: transform 0.3s ease; /* Smooth animation transition */
+    transition: transform 0.3s ease; 
   }
   
   .card .titlebox h3.scrolling:hover {
@@ -131,8 +131,8 @@
     padding-left:10px;
     padding-right: 10px;
     scrollbar-width: none;
-    overflow: -moz-scrollbars-none; /* Older Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none; 
     overflow-y: scroll;
 }
 
@@ -231,7 +231,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.5s ease, font-size 0.5s ease; /* Add transition for smooth hover effect */
+    transition: background-color 0.5s ease, font-size 0.5s ease; 
     
 }
 .card .pricebox .details-button:hover{
