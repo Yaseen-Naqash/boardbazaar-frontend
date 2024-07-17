@@ -71,7 +71,7 @@
     text-decoration: none; /* Inherit text decoration from parent */
   }
   main {
-    background-color: #293340;
+    background-color: transparent;
     position: relative;
     margin: 20px
   }
