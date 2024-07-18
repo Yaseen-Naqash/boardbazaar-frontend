@@ -53,17 +53,17 @@
     user-select: none; /* Non-prefixed version */
 
       background-image: url(../images/background.jpg);
-      color: black;
+      color: var(--text-color);
       font-family: 'Teshrin-bold';
       line-height: 1.6;
       text-align: right;
       overflow-x: hidden;
   }
   h1,h2,h3,h4,h5{
-    font-family: 'Teshrin-bold';
+    font-family: 'saad';
   }
   p{
-    font-family: 'Teshrin-regular';
+    font-family: 'Teshrin-bold';
   }
   a{
     color: inherit; /* Inherit color from parent */
@@ -73,6 +73,6 @@
   main {
     background-color: transparent;
     position: relative;
-    margin: 20px
+    margin: 35px
   }
   

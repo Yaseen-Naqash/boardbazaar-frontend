@@ -88,7 +88,7 @@
     overflow: hidden;
   }
   
-  .card .titlebox h3 {
+  .card .titlebox p {
     width: calc(100% - 20px); 
     white-space: nowrap; 
     overflow: hidden; 
@@ -99,7 +99,7 @@
     transition: transform 0.3s ease; 
   }
   
-  .card .titlebox h3.scrolling:hover {
+  .card .titlebox p.scrolling:hover {
     overflow: visible;
     animation: scrollText 7s linear infinite;
   }
@@ -109,7 +109,7 @@
     to { transform: translateX(180%); }
   }
   
-  .card .titlebox h3:not(:hover) {
+  .card .titlebox p:not(:hover) {
     transform: none;
     transition: none;
   }

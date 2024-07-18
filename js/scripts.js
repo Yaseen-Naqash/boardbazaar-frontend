@@ -81,7 +81,7 @@ $(document).ready(function() {
 });
 // scrolling text
 document.addEventListener('DOMContentLoaded', function() {
-  const textElement = document.querySelector('.card .titlebox h3');
+  const textElement = document.querySelector('.card .titlebox p');
   if (textElement.scrollWidth > textElement.clientWidth) {
     textElement.classList.add('scrolling');
   } else {

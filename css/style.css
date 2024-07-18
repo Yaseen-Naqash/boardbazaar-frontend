@@ -224,7 +224,9 @@ nav{
     position: relative;
     height: 40vw;
     width: 100%;
+    /* change HERE */
     display: grid;
+    /*change HERE  */
     grid-template-columns: 2fr 4fr 2fr;
     gap: 10px;
 }
@@ -395,7 +397,7 @@ nav{
     .hero{
         background-color: transparent;
         position: relative;
-        height: 40vw;
+        height: 127vw;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -434,6 +436,141 @@ nav{
         border-radius: 2vw;
         
     }
+  }
+
+  .welcome{
+    padding: 15px;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: fit-content;
+    margin-top: 4vw;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     
+    position: relative;
+    /* border: 6px solid var(--red-color); */
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "title title title" "pr pr pr" "stats stats stats";
+    overflow: hidden;
+
+  }
+
+  .welcome-right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16vw;
+    height: auto;
+    filter: drop-shadow(2px 2px 3px #484848);
+    transform: scaleX(-1);
+
+  }
+  .welcome-left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15vw;
+    height: auto;
+    filter: drop-shadow(2px 2px 3px #484848);
     
+  }
+  .welcome-title{
+    background-color: transparent;
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+
+  }
+  .line{
+    margin: 5px auto;
+    width: 70%;
+    height: 3px;
+    color: var(--red-color);
+    background-color: var(--red-color);
+    border-color: var(--red-color);    
+    box-shadow: var(--red-color) 0px 0px 15px 1px ;
+}
+  .welcome-pr{
+    padding: 1.5vw;
+    font-size: 20px;
+    background-color: transparent;
+    grid-area: pr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stats{
+    height: fit-content;
+    grid-area: stats;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0px 25px;
+  }
+  .sell-orders-count{
+    border: 6px solid var(--red-color);
+    color: var(--red-color);
+  }
+  .user-count{
+    border: 6px solid var(--yellow-color);
+    color: var(--yellow-color);
+
+  }
+  .buy-orders-count{
+
+    border: 6px solid var(--blue-color);
+    color: var(--blue-color);
+  }
+  .sell-orders-count, .buy-orders-count, .user-count{
+    flex: 1 1 100px;
+    margin: 20px 10px;
+    padding: 20px;
+    min-width: 280px;
+    max-height: 200px;
+    background-color: transparent;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    filter: drop-shadow(2px 2px 1px #434343);
+
+  }
+  
+  @media screen and (max-width: 761px) {
+    .welcome-left,.welcome-right{
+        display: none;
+    }
+    .welcome-title{
+        font-size: 35px;
+    }
+  }
+  @media screen and (max-width: 695px) {
+    
+    .welcome-title{
+        font-size: 5vw;
+    }
+    .sell-orders-count, .buy-orders-count, .user-count{
+        font-size: 25px;
+        margin: 20px 30px;
+    }
+  }
+  @media screen and (max-width: 472px) {
+    .welcome-pr{
+        font-size:15px ;
+    }
+    .sell-orders-count, .buy-orders-count, .user-count{
+        font-size: 20px;
+        margin: 10px 15px;
+        min-width: 220px;
+    }
   }
