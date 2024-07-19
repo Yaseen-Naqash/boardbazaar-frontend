@@ -47,6 +47,9 @@ nav{
     display: block;
     margin: 0 auto;
     filter: drop-shadow(2px 2px 2px #919191);
+    border: solid 3px var(--red-color);
+        background-color: var(--primary-color);
+        border-radius: 15px;
 }
 
 .navbar-links{
@@ -187,10 +190,9 @@ nav{
     }
     .navbar-logo{
         border: solid 3px var(--red-color);
-
-        max-width: 270px;
         background-color: var(--primary-color);
         border-radius: 15px;
+        max-width: 270px;
     }
     .navbar-links{
         display: none;
@@ -572,5 +574,207 @@ nav{
         font-size: 20px;
         margin: 10px 15px;
         min-width: 220px;
+    }
+  }
+
+  /* why */
+  .why{
+    width: 100%;
+    height: fit-content;
+    padding: 15px;
+    padding-bottom: 70px;
+    margin-top: 3vw;
+    background-color: var(--primary-color);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: 1fr 1fr;
+    z-index: -2;
+  }
+  .why .welcome-pr{
+    text-align: justify;
+    font-size: 20px;
+  }
+
+  /* WHY CARDS */
+  .why-card{
+    margin: -30px 0;
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* border: 5px solid black; */
+
+    position: relative;
+    
+}
+.why-back{
+    position: absolute;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) -5px -6px 5px 0px inset, rgba(255, 255, 255, 0.35) 5px 6px 5px 0px inset;
+
+    background-color: var(--red-color);
+    border-radius: 100px;
+    width: 130%;
+    height: 370px;
+    top: 50%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
+}
+.why-text{
+    z-index: 1;
+    display: grid;
+    
+    grid-template-rows: 0.5fr 200px;
+}
+.why-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 95px;
+    margin-right: 7vw;
+    font-size: 25px;
+    font-family: 'saad';
+    /* border: 5px solid black; */
+
+
+}
+.why-pr{
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-right: 10vw;
+    margin-left: 3vw;
+    margin-top: 0px;
+    /* border: 5px solid black; */
+    font-size: 25px;
+    font-family: 'Teshrin-bold';
+    text-align: justify;
+
+}
+.why-img{
+    /* border: 5px solid black; */
+
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.why-img img{
+    width: auto;
+    height: 550px;
+    border-radius: 1VW;
+}
+.image-filler{
+    display: none;
+}
+.why-reverse{
+    
+    grid-template-columns: 1fr 3fr;
+    
+}
+.why-reverse .why-back{
+    left: 68%;
+}
+.why-reverse .why-title{
+    margin-left: 7vw;
+    margin-right: 0vw;
+}
+.why-reverse .why-pr{
+    margin-left: 10vw;
+    margin-right: 3vw;
+
+}
+.why-card-blue .why-back{
+    background-color: var(--blue-color);
+
+}
+.why-card-yellow .why-back{
+    background-color: var(--yellow-color);
+
+}
+.why-card-dark .why-back{
+    background-color: var(--text-color);
+
+}
+
+@media screen and (max-width: 800px) {
+    .why .welcome-pr{
+        text-align: justify;
+        font-size: 2.5vw;
+      }
+    .why-card{
+        margin: 1vw 0;
+        height: 70vw;
+        grid-template-columns: 3fr 2fr;
+    }
+    .why-reverse{
+    
+        grid-template-columns: 2fr 3fr;
+        
+    }
+    .why-back{
+        border-radius: 5VW;
+        height: 50vw;
+    }
+    
+    .why-title{
+        
+        margin-top: 12vw;
+        margin-right: 7vw;
+        font-size: 2.5vw;
+    
+    }
+    .why-pr{
+        margin-right: 10vw;
+        margin-left: 3vw;
+        margin-top: 0vw;
+        font-size: 2.5vw;
+        
+    
+    }
+    .image-filler{
+        display: block;
+    }
+    .why-img{
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .why-img img{
+        width: auto;
+        height: 65vw;
+        border-radius: 1VW;
+    }
+    .why-reverse .why-img{
+        left: 80%;
+    }
+    .why-reverse .why-pr{
+        margin-left: 8vw;
+        margin-right: 2.5vw;
+    }
+    
+  }
+  @media screen and (max-width: 420px) {
+    .why-title h2{
+        font-size: 4vw;
+    }
+    .why-pr p{
+        margin-top: 3vw;
+    }
+    .why-back{
+        border-radius: 5VW;
+        height: 58vw;
     }
   }
