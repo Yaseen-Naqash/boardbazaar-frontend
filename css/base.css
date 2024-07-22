@@ -7,23 +7,15 @@
   }
 
   /* fonts */
-  @font-face {
-    font-family: 'Teshrin-heavy';
-    src: url('../fonts/TeshrinAR+LT-Heavy.otf') format('opentype'); 
-  }
+
   @font-face {
     font-family: 'Teshrin-bold';
     src: url('../fonts/TeshrinAR+LT-Bold.otf') format('opentype'); 
     font-weight: bold; 
   }
   @font-face {
-    font-family: 'Teshrin-regular';
-    src: url('../fonts/TeshrinAR+LT-Regular.otf') format('opentype'); 
-    font-weight: bold; 
-  }
-  @font-face {
-    font-family: 'saad';
-    src: url('../fonts/Saad.ttf') format('truetype');
+    font-family: 'digi-lalezar';
+    src: url('../fonts/Digi\ Lalezar\ Plus.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -52,6 +44,8 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version */
 
+    direction: rtl;
+    text-align: right;
       background-image: url(../images/background.jpg);
       color: var(--text-color);
       font-family: 'Teshrin-bold';
@@ -60,7 +54,7 @@
       overflow-x: hidden;
   }
   h1,h2,h3,h4,h5{
-    font-family: 'saad';
+    font-family: 'digi-lalezar';
   }
   p{
     font-family: 'Teshrin-bold';
@@ -68,7 +62,7 @@
   a{
     color: inherit; /* Inherit color from parent */
     font-size: inherit; /* Inherit font size from parent */
-    text-decoration: none; /* Inherit text decoration from parent */
+    text-decoration: none; 
   }
   main {
     background-color: transparent;
