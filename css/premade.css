@@ -201,7 +201,7 @@
   }
   
   .button-74:hover {
-    transform: scale(1.07);
+    transform: scale(1.02);
     background-color: #fff;
     box-shadow: var(--red-color) 7px 7px 0 0;
   }

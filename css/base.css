@@ -36,6 +36,21 @@
   input[type="text"], input[type="email"], input[type="password"], textarea, select {
     font-family:'Teshrin-regular';
   }
+  input[type="text"]:focus {
+    outline: none;
+  }
+
+/* Change the color of the selected text and its background */
+::selection {
+  color: white;         /* Text color */
+  background: var(--red-color);     /* Background color */
+}
+
+/* For Firefox compatibility */
+::-moz-selection {
+  color: white;         /* Text color */
+  background: var(--red-color);     /* Background color */
+}
 
   body {
     /* prevent selecting text */
