@@ -31,6 +31,7 @@ nav{
     top: 0;
     left: 0;
     filter: drop-shadow(2px 2px 2px #919191);
+    z-index: 0;
 }
 .nav-right{
     width: auto;
@@ -39,6 +40,7 @@ nav{
     top: 0;
     right: 0;
     filter: drop-shadow(2px 2px 2px #919191);
+    z-index: 0;
 }
 .navbar-logo{
     max-width: 320px;
@@ -183,7 +185,7 @@ nav{
     
     
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 690px) {
     nav{
         padding: 12px 5px;
     }
@@ -544,7 +546,7 @@ nav{
 
   }
   
-  @media screen and (max-width: 761px) {
+  @media screen and (max-width: 837px) {
     .welcome-left,.welcome-right{
         display: none;
     }
@@ -1131,4 +1133,69 @@ input[type="range"]::-moz-range-thumb{
   pointer-events: auto;
   -moz-appearance: none;
   box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+.deals{
+    border: 4px solid var(--red-color);
+    border-radius: 30px;
+    padding: 20px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 1250px) {
+    .deals{
+        
+        grid-template-columns: 1fr 1fr 1fr;
+        
+    }
+}
+@media (max-width: 960px) {
+    .deals{
+        
+        grid-template-columns: 1fr 1fr;
+        
+    }
+}
+
+@media (max-width: 660px) {
+    .deals{
+        
+        grid-template-columns:1fr;
+        
+    }
+}
+
+.pagination{
+    padding: 30px;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: fit-content;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin: 30px 0;
+    position: relative;
+    /* border: 6px solid var(--red-color); */
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 15px;
+}
+
+.under-construction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5vw;
+}
+.under-construction img{
+    height: auto;
+    width: 100%;
+    margin-top: -13vw;
 }

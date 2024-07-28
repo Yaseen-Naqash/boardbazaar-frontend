@@ -28,7 +28,7 @@
     background-color: var(--primary-color);
     border-radius: 14px ;
     border: 2px solid var(--red-color);
-    box-shadow: rgb(125, 125, 125) 0px 0px 30px ;
+    box-shadow: #505357 0px 0px 15px;
 }
 .card .image-holder{
     width: 100%;
@@ -251,7 +251,6 @@
 /* colors */
 .yellow-theme {
     border: 2px solid var(--yellow-color); 
-    box-shadow: rgb(125, 125, 125) 0px 0px 30px var(--yellow-color); 
 }
 
 .yellow-theme .usernamebox {
@@ -291,7 +290,6 @@
 /* blue */
 .blue-theme {
     border: 2px solid var(--blue-color); 
-    box-shadow: rgb(125, 125, 125) 0px 0px 30px var(--blue-color);
 }
 
 .blue-theme .usernamebox {
