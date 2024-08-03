@@ -120,3 +120,90 @@
   z-index: 9999;
 }
 
+
+/* scroll bar */
+/* WebKit-based browsers */
+::-webkit-scrollbar {
+  width: 12px;  /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar (for horizontal scrollbar) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--red-color); /* Color of the draggable part */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red-color); /* Color when hovered */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Background color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin; /* Options: auto, thin, none */
+  scrollbar-color: var(--red-color) var(--primary-color); /* Color of the thumb and track */
+  
+}
+
+
+/* custome alert */
+.contact-info {
+            
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+.modal-content {
+  direction: rtl;
+  background-color: var(--primary-color);
+  border: 3px solid var(--red-color);
+  border-radius: 15px;
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+}
+.close {
+  border: 3px solid var(--red-color);
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  max-width: fit-content;
+  color: var(--red-color);
+  float: left;
+  font-size: 28px;
+  padding: 0px 15px;
+  transition: background-color 0.4s, transform 0.4s ,box-shadow 0.4s;
+  box-shadow: var(--red-color) 4px 4px 0 0;
+  
+}
+.close:hover,
+.close:focus {
+  box-shadow: var(--red-color) 7px 7px 0 0;
+  transform: scale(1.02);
+  background-color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.contact-items{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 15px;
+ 
+}

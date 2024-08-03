@@ -6,41 +6,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // loading screen
-window.addEventListener('load', () => {
-  const loadingScreen = document.getElementById('loading-screen');
-  const content = document.getElementById('content');
+// window.addEventListener('load', () => {
+//   const loadingScreen = document.getElementById('loading-screen');
+//   const content = document.getElementById('content');
 
-  const minLoadingTime = 100000; // Minimum loading time in milliseconds
-  const startTime = new Date().getTime();
+//   const minLoadingTime = 4000;
+//   const startTime = new Date().getTime();
 
-  const tips = [
-      "قبل از معامله حتما از شخص دیگر شناخت کافی پیدا کنید",
-      "بردبازار یک پلتفرم مردمی و اوپن سورس هست",
-      "توایلایت ایمپریوم خیلی بازی خوبیه حتما بازیش کنید",
-      "با خرید یک قهوه سازنده این پلتفرم رو حمایت کنید",
-      "الان که دارم این جمله رو مینویسم تو بیمارستانم دیگه خسته شدم",
-      "یا درست ببر یا درست بباز یا گوه نخور"
-  ];
+//   const tips = [
+//       "قبل از معامله حتما از شخص دیگر شناخت کافی پیدا کنید",
+//       "بردبازار یک پلتفرم مردمی و اوپن سورس هست",
+//       "توایلایت ایمپریوم خیلی بازی خوبیه حتما بازیش کنید",
+//       "با خرید یک قهوه سازنده این پلتفرم رو حمایت کنید",
+//       "الان که دارم این جمله رو مینویسم تو بیمارستانم دیگه خسته شدم",
+//       "یا درست ببر یا درست بباز یا گوه نخور"
+//   ];
 
-  const randomTip = tips[Math.floor(Math.random() * tips.length)];
-  document.getElementById('tip-text').innerText = randomTip;
+//   const randomTip = tips[Math.floor(Math.random() * tips.length)];
+//   document.getElementById('tip-text').innerText = randomTip;
 
-  // Function to hide the loading screen
-  const hideLoadingScreen = () => {
-      const currentTime = new Date().getTime();
-      const elapsedTime = currentTime - startTime;
+//   // Function to hide the loading screen
+//   const hideLoadingScreen = () => {
+//       const currentTime = new Date().getTime();
+//       const elapsedTime = currentTime - startTime;
       
-      if (elapsedTime >= minLoadingTime) {
-          loadingScreen.style.display = 'none';
-          content.style.display = 'block';
-      } else {
-          setTimeout(hideLoadingScreen, minLoadingTime - elapsedTime);
-      }
-  };
+//       if (elapsedTime >= minLoadingTime) {
+//           loadingScreen.style.display = 'none';
+//           content.style.display = 'block';
+//       } else {
+//           setTimeout(hideLoadingScreen, minLoadingTime - elapsedTime);
+//       }
+//   };
 
-  // Initially call the function after the window loads
-  hideLoadingScreen();
-});
+//   hideLoadingScreen();
+// });
 
 
 

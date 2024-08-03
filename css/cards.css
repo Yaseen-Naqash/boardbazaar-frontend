@@ -53,7 +53,7 @@
     
   }
   
-.card .usernamebox{
+.usernamebox{
     position: absolute;
     top: 49%;
     left: 50%;
@@ -76,7 +76,7 @@
     transition: box-shadow 0.3s ease;
     transition: scale 0.3s ease;
 }
-.card .usernamebox:hover{
+.usernamebox:hover{
     
     scale: 1.03;
     box-shadow: var(--red-color) 0px 0px 15px 5px ;
