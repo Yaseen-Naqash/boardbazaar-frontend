@@ -159,7 +159,7 @@ document.querySelectorAll('form').forEach(form => {
       });
       
       // Uncomment to submit the form after logging
-      // this.submit();
+      this.submit();
   });
 });
 

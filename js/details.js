@@ -72,14 +72,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactInfoElements = document.querySelectorAll('.contact-info');
     const modal = document.getElementById('myModal');
     const modalBody = document.getElementById('modal-body');
-    const closeBtn = document.querySelector('.close');
 
     contactInfoElements.forEach(function(element) {
         element.addEventListener('click', function() {
             const contactInfo = element.getAttribute('data-info');
             modalBody.innerHTML = contactInfo;
             modal.style.display = "block";
-
+            const closeBtn = document.querySelector('.close');
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+        
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
             // Attach the copy event listeners to the newly added .copyable elements
             document.querySelectorAll('.copyable').forEach(function(copyElement) {
                 copyElement.addEventListener('click', function() {
@@ -95,15 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+    
 });
 
 

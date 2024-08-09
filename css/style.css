@@ -15,7 +15,7 @@ nav{
     box-shadow: #505357 4px 4px 15px;
     
     position: relative;
-    z-index: 10;
+    z-index: 1000;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
@@ -72,6 +72,7 @@ nav{
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     }
 .user-box img{
     
@@ -112,7 +113,7 @@ nav{
     box-shadow: 0px 0px 65px rgb(0, 0, 0);
     transition: 0.5s;
     background-color: var(--primary-color);
-    z-index: 100;
+    z-index: 1000;
     overflow: hidden;
 }
 
@@ -142,6 +143,9 @@ nav{
     padding: 7px;
     border: 2px solid var(--red-color);
     border-radius: 30px;
+    scrollbar-width: none;
+    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none; 
 }
 .other-links{
     padding-right: 7px;
@@ -171,7 +175,7 @@ nav{
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 15;
+    z-index: 1050;
     background-color: var(--primary-color);
     margin-left: -8px;
     margin-bottom: -12px;
@@ -209,7 +213,6 @@ nav{
         
         cursor: pointer;
         color: #e73656;
-        z-index: 5;
         
     }
     .slidebar-cross{
@@ -477,6 +480,7 @@ nav{
     
   }
   .welcome-title{
+    width: 100%;
     background-color: transparent;
     grid-area: title;
     display: flex;
@@ -1046,7 +1050,12 @@ nav{
     transform: translate(-50%, -50%);
     pointer-events: none;
     color: var(--red-color); /* Text color */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
+
 
 
 
@@ -1327,7 +1336,15 @@ input[type="range"]::-moz-range-thumb{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-
+    
+}
+.details-detail h5{
+    text-align: center;
+}
+@media (max-width: 760px) {
+    .details-detail h5{
+        font-size: 7vw;
+    }
 }
 .details-description{
     height: 500px;
@@ -1348,7 +1365,7 @@ input[type="range"]::-moz-range-thumb{
 .details-contact{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     padding: 15px 5px;
 }
@@ -1560,9 +1577,8 @@ input[type="range"]::-moz-range-thumb{
     min-height: 65px;
     border-radius: 20px;
     border: 4px solid var(--red-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     
     padding: 10px 20px;
     position: relative;
@@ -1586,9 +1602,7 @@ input[type="range"]::-moz-range-thumb{
     .auc-username{
         grid-area: left;
     }
-    .contact-info{
-        margin-right: auto;
-    }
+    
 }
 .auc-form{
     margin-top: 25px;
@@ -1827,4 +1841,120 @@ input[type="range"]::-moz-range-thumb{
   .blue-details .category p{
     background-color: var(--blue-color);
     color: var(--text-color);
+}
+
+/* Profile */
+.profile{
+    padding: 15px;
+    padding-left: 55px;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: fit-content;
+    margin-top: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    
+    position: relative;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    
+    /* overflow: hidden; */
+}
+.profile > * {
+    min-width: 0; /* Allow children to shrink */
+    max-width: 100%; /* Ensure children do not exceed the container width */
+    flex-shrink: 1; /* Allow flexibility to shrink */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.pf-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+.profile-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    
+}
+.sub-date{
+    margin: 10px 0;
+    text-align: center;
+    opacity: 0.7;
+}
+.pf-name{
+    margin: 15px auto;
+    font-size: 30px;
+}
+.pf-bio{
+    padding: 25px;
+}
+.pf-games{
+    width: 100%;
+    height: fit-content;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.pf-game-list {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.pf-game-list h3{
+    line-height: normal;
+    padding: 0px 4px;
+    background-color: var(--red-color);
+    color: var(--primary-color);
+    width: fit-content;
+    height: fit-content;
+    opacity: 1;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deal-history{
+    width: 100%;
+    margin: 20px 0;
+    padding: 5px 15px;
+    background-image: url(../images/background.jpg);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgb(135, 135, 135) inset;
+
+}
+.pf-deals{
+    width: 100%;
+
+    margin: 20px 0; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+.pf-deals > * {
+    min-width: 0; /* Allow children to shrink */
+     /* Ensure children do not exceed the container width */
+    flex-shrink: 1; /* Allow flexibility to shrink */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+@media (max-width: 930px) {
+    .profile{
+        grid-template-columns: 1fr;
+        padding: 15px;
+        
+    }
+}
+
+.review-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

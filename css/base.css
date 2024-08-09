@@ -70,6 +70,8 @@
   }
   h1,h2,h3,h4,h5{
     font-family: 'digi-lalezar';
+    line-height: 1.2;
+
   }
   p{
     font-family: 'Teshrin-bold';
@@ -79,11 +81,19 @@
     font-size: inherit; /* Inherit font size from parent */
     text-decoration: none; 
   }
+  button{
+    font-family: 'Teshrin-bold';
+  }
   main {
     background-color: transparent;
     position: relative;
     margin: 3vw;
   }
+
+  fieldset {
+    border: none;
+  }
+
 
 
   /* loading screen */
@@ -152,8 +162,11 @@ html {
 
 /* custome alert */
 .contact-info {
-            
   cursor: pointer;
+}
+.contact-items{
+  position:relative;
+
 }
 .modal {
   display: none;
@@ -184,7 +197,9 @@ html {
   border-radius: 50px;
   max-width: fit-content;
   color: var(--red-color);
-  float: left;
+  position: absolute;
+  left: 3%;
+  top: 2%;
   font-size: 28px;
   padding: 0px 15px;
   transition: background-color 0.4s, transform 0.4s ,box-shadow 0.4s;
