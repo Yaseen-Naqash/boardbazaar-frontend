@@ -91,6 +91,16 @@ rangeInput.forEach(input =>{
 });
 });
 
+// comma-add-string
+document.addEventListener("DOMContentLoaded", function() {
+  var elements = document.querySelectorAll('.comma-add-string');
+  
+  elements.forEach(function(element) {
+      var number = element.textContent.trim();
+      var formattedNumber = number.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      element.textContent = formattedNumber;
+  });
+});
 
 // comma insert 
 // NOTE :: add "comma-add" class to whatever inputfield with type "text" to make it comma inserted and digit safe

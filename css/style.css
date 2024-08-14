@@ -960,6 +960,7 @@ nav{
     align-items: center;
     gap: 30px;
 }
+
 @media (max-width: 750px) {
     .filter-box-form{
         flex-direction: column;
@@ -980,6 +981,16 @@ nav{
     color: var(--red-color);
     text-align: right;
 }
+.input-field textarea{
+    width: 280px;
+    height: 150px;
+    padding: 0 15px;
+    outline: none;
+    font-size: 19px;
+    color: var(--red-color);
+    text-align: right;
+    resize: none;
+}
 
 
 .input-field label{
@@ -997,6 +1008,19 @@ nav{
 .input-field input:focus ~ label,
 .input-field input:not(:placeholder-shown) ~ label {
     top: -15%;
+    right: 10%;
+    font-size: 16px;
+    padding: 0 10px;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    opacity: 1;
+    margin: 0 0px;
+
+
+}
+.input-field textarea:focus ~ label,
+.input-field textarea:not(:placeholder-shown) ~ label {
+    top: 0%;
     right: 10%;
     font-size: 16px;
     padding: 0 10px;
@@ -1365,9 +1389,9 @@ input[type="range"]::-moz-range-thumb{
 .details-contact{
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 5px;
+    padding: 15px;
 }
 .details-info{
     padding: 0 15px;
@@ -1957,4 +1981,312 @@ input[type="range"]::-moz-range-thumb{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+
+/* create */
+
+
+.create-form{
+    padding: 15px;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: fit-content;
+    margin-top: 4vw;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    
+    position: relative;
+    /* border: 6px solid var(--red-color); */
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.create-wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 350px 1fr 350px;
+}
+
+.create-col1{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 25px;
+}
+.create-col2{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 30px;
+    align-items: center;   
+    gap: 25px;
+}
+.create-col3{
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: start;
+    align-items: center;   
+}
+
+.create-fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 25px;
+}
+
+.create-input-cprrection{
+    width: 100%;
+}
+@media (max-width: 1100px) {
+    .create-form{
+        padding: 5px;
+    }
+    .create-wrapper{
+        
+        grid-template-columns: 1fr;
+    }
+    .create-col1{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 25px;
+    }
+    .create-input-cprrection{
+        width: 280px;
+    }
+}
+/* image uploader box */
+
+
+.upload-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.upload-box {
+    width: 100%;
+    border: 6px dashed var(--red-color);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    
+}
+
+.upload-box p {
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+
+.browse-btn {
+    background-color: var(--red-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.browse-btn:hover {
+    background-color: #0056b3;
+}
+
+#file-input {
+    display: none;
+}
+
+.image-preview {
+    border: 3px solid var(--red-color);
+    border-radius: 25px;
+    height: 350px;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.image-preview img {
+    max-width: 150px;
+    max-height: 150px;
+    border: 2px solid var(--red-color);
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.create-games-wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 25px;
+
+}
+.create-games-wrapper > * {
+    min-width: 0; /* Allow children to shrink */
+     /* Ensure children do not exceed the container width */
+    flex-shrink: 1; /* Allow flexibility to shrink */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+.create-game{
+    width: 300px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    border: 3px solid var(--red-color);
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgb(135, 135, 135) inset;
+
+}
+
+
+/* category selection */
+.multi-select-dropdown {
+    position: relative;
+    width: 250px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.dropdown-header {
+    width: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected-options {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.select-option{
+    font-size: 12px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--red-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color);
+    border: 3px solid var(--red-color);
+    border-radius: 25px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.dropdown-options label {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.multi-select-dropdown.open .dropdown-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.dropdown-options input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and label text */
+    accent-color: var(--red-color); /* Customize checkbox color */
+}
+
+.dropdown-options label:hover {
+    background-color: var(--red-color); /* Background color on hover */
+    border-radius: 3px;
+    color: var(--primary-color);
+    padding: 5px;
+}
+
+
+.create-form {
+    --red-color: #e73656;
+    --blue-color: #00adb2;
+    transition: --red-color 3s ease;
+}
+
+.create-form.toggle-color {
+    --red-color: #00adb2;
+    
+}
+
+@media (max-width: 1100px) {
+    .create-form{
+        padding: 5px;
+    }
+    .create-wrapper{
+        
+        grid-template-columns: 1fr;
+    }
+    .create-col1{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 25px;
+    }
+    .create-input-cprrection{
+        width: 280px;
+    }
+    
+
+    .upload-container {       
+        margin-top: -20px;
+        padding: 0 15px;
+    }
+    .create-col2 p{
+        padding: 0 15px;
+        text-align: center;
+    }
 }

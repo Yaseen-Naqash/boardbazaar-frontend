@@ -180,6 +180,12 @@
     transition: height 1s ease;
     z-index: 2;
 }
+.quantity{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 .card .pricebox .header{
     padding: 1px 15px 15px 15px;
     height: 55px;
