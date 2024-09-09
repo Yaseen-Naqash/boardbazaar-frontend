@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="FA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoardBazaar | ثبت نام</title>
+    <title>BoardBazaar | ویرایش پروفایل</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/premade.css">
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/style.css">
-
     <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
 
 </head>
 <body>
@@ -130,84 +131,130 @@
     
         </nav>
     </header>
-
     
-
     <main>
-        <section class="login">
-            <img class="welcome-right" src="images/welcome.png" alt="" style="width: 10vw; transform: scale(-1); top: auto; bottom: 0;" >
-            <img class="welcome-left" src="images/welcome.png" alt="" style="width: 10vw;"> 
-
+        <section class="create-form">
+            
             <div class="welcome-title">
-                <h2> ثبت نام!</h2>
+                <h2>ویرایش پروفایل</h2>
                 <hr class="line">
             </div>
-            <form action="" id="register-form">
-                <div class="login-form" >
-                    
-                    <div class="input-field"> 
-                        <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" name="name" id="name" style="max-width: 320px;">
-                        <label>نام</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">نام خودتون رو به فارسی وارد کنید</div>
-                    </div>
+            <form id="image-upload-form" method="POST" enctype="multipart/form-data" style="width: 100%;">
+                
+                <div class="edit-profile-wrapper">
+                    <div class="edit-pf-last" style="padding: 15px; gap: 30px;">
+                        <div class="input-field create-input-cprrection"> 
+                            <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" id="deal-titr" name="deal-titr" style="width: 100%; max-width: 280px;">
+                            <label>نام </label>
+                        </div>
 
-                    <div class="input-field"> 
-                        <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" name="username" id="username" style="max-width: 320px;">
-                        <label>نام کاربری</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">فقط حروف انگلیسی اعداد و "_"</div>
+                        <div class="input-field">
+                            <textarea class="button-74" placeholder=" " spellcheck="false" id="deal-description" name="deal-description" style="width: 100%; max-width: 280px;"></textarea>
+                            
+                            <label>درباره من</label>
+                        </div>
 
-                        <datalist id="username_list">
-                            <option value="yasin_naqash">
-                            <option value="yazdan_naqash">
-                            <option value="neda_sadeghi">
-                            <option value="sadegh_ghlami">
-                            <option value="mahsa_amini">
-                        </datalist>
-                    </div>
-                    <div class="input-field"> 
-                        <input required class="button-74" type="text" placeholder=" " autocomplete="off" name="phone" id="phone" style="max-width: 320px;">
-                        <label>شماره تلفن</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">شماره تلفن همراه 11 رقمی </div>
-                        <datalist id="phone_list">
-                            <option value="09380242434">
-                            <option value="09380022042">
-                            <option value="09395939990">
-                            <option value="09384535545">
-                            <option value="09982254978">
-                        </datalist>
-                    </div>
-                    <div class="input-field"> 
-                        <input required class="button-74" type="password" spellcheck="false" autocomplete="new-password" placeholder=" " autocomplete="off" name="username" id="pass1" style="max-width: 320px;">
-                        <label> رمز عبور</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">حد اقل 6 حد اکثر 12 فقط حروف انگلیسی و اعداد</div>
-                    </div>
-                    <div class="input-field"> 
-                        <input required class="button-74" type="password" spellcheck="false" autocomplete="new-password" placeholder=" " autocomplete="off" name="username" id="pass2" style="max-width: 320px;">
-                        <label>تکرار رمز عبور</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">حد اقل 6 حد اکثر 12 فقط حروف انگلیسی و اعداد</div>
-                    </div>
 
-                    
-                    <div class="login-buttons">
-                        <button type="submit" class="button-74" style="min-width: fit-content;"> تایید اطلاعات</button>
-                        <a href="login.html" class="button-74" style="min-width: fit-content;">ورود به حساب</a>
-                    </div>
-                    
+                        <div required class="input-field create-input-cprrection">
+                            <input class="button-74"  type="text" spellcheck="false" placeholder=" " autocomplete="off" id="deal-city" name="deal-city" style="width: 100%; max-width: 280px;">
+                            <label>شهر</label>
 
+                            <!-- 
+                                HERES HOW YOU SHOULD CREATE CITY PATTERN IN DJANGO
+                                city_pattern = '|'.join(city.cityName for city in cities)
+                                
+                                
+                                attrubutes :
+
+                                    pattern="{{ city_pattern }}"
+                                    oninvalid="this.setCustomValidity('شهر مورد تایید نیست')" 
+                                    oninput="this.setCustomValidity('')"  
+                                    required
+
+
+                                ADD THIS DATA LIST BELOW INPUT FIELD
+                                <datalist id="city-list">
+                                    {% for city in cities %}
+                                    <option value="{{ city.cityName }}">
+                                    {% endfor %}
+                                </datalist>
+                             -->
+                            
+
+                            
+                        </div>
+                        <div class="input-field create-input-cprrection"> 
+                            <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" id="deal-titr" name="deal-titr" style="width: 100%; max-width: 280px;">
+                            <label>تلفن </label>
+                        </div>
+                        <div class="input-field create-input-cprrection"> 
+                            <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" id="deal-titr" name="deal-titr" style="width: 100%; max-width: 280px;">
+                            <label>تلگرام </label>
+                        </div>
+                        <button class="button-74">تایید</button>
+                    </div>
+                    <div class="edit-pf-middle">
+                        <div class="upload-container">
+                        
+                            <div class="upload-box" id="upload-box">
+                                <p>عکس خودتون رو اینجا بزارید.</p>
+                                <input type="file" id="file-input" name="deal-pictures" id="file-input">
+                                <label for="file-input" class="button-74">بارگزاری عکس</label>
+                            </div>
+                            <div class="fav-games" id="fav-games">
+                                <div id="fav-button" style="display: flex; flex-direction: row; justify-content: center; align-items:  center; gap: 30px; width: 100%;">
+                                     <h2> بازی های مورد علاقه!</h2> 
+                                </div>
+                                <div class="input-field"> 
+                                    <input class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" id="deal-titr" name="deal-titr" style="width: 100%; max-width: 280px;">
+                                    <label>بازی اول</label>
+                                </div>
+                                <div class="input-field"> 
+                                    <input class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" id="deal-titr" name="deal-titr" style="width: 100%; max-width: 280px;">
+                                    <label>بازی دوم</label>
+                                </div>
+                                <div class="input-field"> 
+                                    <input class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" id="deal-titr" name="deal-titr" style="width: 100%; max-width: 280px;">
+                                    <label>بازی سوم</label>
+                                </div>
+                                <div class="input-field"> 
+                                    <input class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" id="deal-titr" name="deal-titr" style="width: 100%; max-width: 280px;">
+                                    <label>بازی چهارم</label>
+                                </div>
+                                <div class="input-field"> 
+                                    <input class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" id="deal-titr" name="deal-titr" style="width: 100%; max-width: 280px;">
+                                    <label>بازی پنجم</label>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edit-pf-first">
+                        <img class="profile-image" id="image-preview" src="images/photo_2022-05-31_11-34-33.jpg" alt="">
+                        <div class="usernamebox" style="position: relative; top: auto; left: auto;  transform: none; margin: 15px;">
+                            <a href="">Dendi</a>
+                        </div>
+                        <hr class="line">
+
+                        <!-- change data-rating -->
+                        <div class="static-rating" data-rating="3">
+                            <span class="star" data-value="1"></span>
+                            <span class="star" data-value="2"></span>
+                            <span class="star" data-value="3"></span>
+                            <span class="star" data-value="4"></span>
+                            <span class="star" data-value="5"></span>
+                        </div>
+                        <div class="sub-date">
+                            <h3>عضو بردبازار از تاریخ<br> 1378/8/11</h3>
+                        </div>
+                        <button type="button" id="delete-image" class="button-74">حذف تصویر</button>
+                        <input type="hidden" id="no-profile" name="no-profile">
+                    </div> 
                     
                 </div>
             </form>
-                
-           
         </section>
     </main>
-
-    
 
     <footer style="position: relative;">
         <div class="footer">
@@ -218,7 +265,7 @@
                     <li>09380242434</li>
                     <li>09396216878</li>
                     <li>Yasin.naqash.1999@gmail.com</li>
-                    <li>Boardbazaar2024@gmail.com</li>
+                    <li>BoardBazaar2024@gmail.com</li>
                 </ul>
             </div>
             <div class="footer-follow-us">
@@ -249,10 +296,9 @@
                 <p>در حال حاظر دنبال اسپانسر یا سرمایه گزار هستم</p>
             </div>
         </div>
-        <p style="direction: ltr; padding-bottom: 15px;" class="no-convert">©2024  BoardBazaar. All Rights Reserved.</p>
+        <p style="direction: ltr; padding-bottom: 15px;">©2024  BoardBazaar. All Rights Reserved.</p>
     </footer>
-    
     <script src="js/navbar.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/edit-profile.js"></script>
 </body>
 </html>

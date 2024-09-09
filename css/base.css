@@ -59,6 +59,7 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version */
 
+    
     direction: rtl;
     text-align: right;
       background-image: url(../images/background.jpg);
@@ -68,6 +69,19 @@
       text-align: right;
       overflow-x: hidden;
   }
+
+  /* For Chrome, Safari, Edge, and Opera */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  /* For Firefox */
+  input[type="number"] {
+      -moz-appearance: textfield;
+  }
+
   h1,h2,h3,h4,h5{
     font-family: 'digi-lalezar';
     line-height: 1.2;

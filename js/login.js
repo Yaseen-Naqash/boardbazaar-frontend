@@ -109,8 +109,7 @@ document.getElementById('register-form').addEventListener('submit', function (e)
         this.submit();
     }
 });
-
-
+    
 // test
 document.addEventListener('DOMContentLoaded', () => {
     console.log('JavaScript Loaded');
