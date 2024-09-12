@@ -2120,6 +2120,7 @@ input[type="range"]::-moz-range-thumb{
 }
 
 .image-preview {
+
     border: 3px solid var(--red-color);
     border-radius: 25px;
     height: 350px;
@@ -2136,14 +2137,43 @@ input[type="range"]::-moz-range-thumb{
     margin-top: 20px;
     gap: 10px;
 }
-
-.image-preview img {
+.img-preview-holder{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+}
+.img-preview-holder img {
     max-width: 150px;
     max-height: 150px;
     border: 2px solid var(--red-color);
     border-radius: 5px;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
 }
+.img-preview-holder .delete-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color); /* Slightly transparent background */
+    color: var(--red-color); /* Red color for the cross */
+    border: 2px solid var(--red-color);
+    font-size: 24px; /* Cross size */
+    padding: 10px 20px;
+    border-radius: 200px; /* Makes the button round */
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+.img-preview-holder:hover .delete-btn {
+    opacity: 0.8;
+    pointer-events: auto; /* Activates button on hover */
+}
+
 
 .create-games-wrapper{
     width: 100%;

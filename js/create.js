@@ -58,9 +58,17 @@ document.addEventListener("DOMContentLoaded", function() {
             const reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onloadend = function() {
+                const imagePreviewHolder = document.createElement('div'); // Create a div
+                imagePreviewHolder.classList.add('img-preview-holder');   // Add the class to the div
+
                 const img = document.createElement('img');
+                const deleteBtn = document.createElement('div'); // Create a div
+                deleteBtn.classList.add('delete-btn');
+                deleteBtn.textContent = "✖"
                 img.src = reader.result;
-                imagePreview.appendChild(img);
+                imagePreviewHolder.appendChild(img);// Append the img inside the div
+                imagePreviewHolder.appendChild(deleteBtn);
+                imagePreview.appendChild(imagePreviewHolder);
             }
         }
     }
@@ -539,6 +547,62 @@ function addInputListeners() {
 
 // Initially call the function to set up the event listeners
 addInputListeners();
+
+
+
+// deleting images from preview and uploade field
+document.addEventListener('click', function(event) {
+    // Check if the clicked element has the class "delete-btn"
+    if (event.target.classList.contains('delete-btn')) {
+        // Get the parent img-preview-holder div
+        const previewHolder = event.target.closest('.img-preview-holder');
+        
+        // Find the image inside the preview holder
+        const img = previewHolder.querySelector('img');
+        const imgSrc = img.getAttribute('src');
+        
+
+        // THINGS THAT I SHOULD HANDLE AFTER BACKEND ATTACHMENT
+        // 1. Check the hidden input with the specific ID (for example, it could be named 'deleted-images')
+        const hiddenInput = document.querySelector('input[name="deleted-images"]');
+        if (hiddenInput) {
+            // Append the image src or ID to the hidden input value (comma-separated)
+            hiddenInput.value += imgSrc + ',';
+        }
+
+        // 2. Loop through images inside .image-holder and delete the one with the matching src
+        const imageHolder = document.querySelector('.image-holder');
+        if (imageHolder) {
+            const images = imageHolder.querySelectorAll('img');
+            images.forEach(image => {
+                if (image.getAttribute('src') === imgSrc) {
+                    image.remove();
+                }
+            });
+        }
+
+        // 3. Remove the parent img-preview-holder div
+        previewHolder.remove();
+
+        // 4. Remove the image from the input[type="file"]
+        const fileInput = document.getElementById('file-input');
+        if (fileInput) {
+            const filesArray = Array.from(fileInput.files);
+            const updatedFiles = filesArray.filter(file => file.name !== imgSrc.split('/').pop());
+
+            // Create a new DataTransfer object to simulate the updated file input
+            const dataTransfer = new DataTransfer();
+            updatedFiles.forEach(file => dataTransfer.items.add(file));
+
+            // Set the input's files property to the updated file list
+            fileInput.files = dataTransfer.files;
+        }
+
+    }
+});
+
+
+
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoardBazaar | ثبت نام</title>
+    <title>BoardBazaar | گزارش</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/premade.css">
     <link rel="stylesheet" href="css/cards.css">
@@ -139,73 +139,29 @@
             <img class="welcome-left" src="images/welcome.png" alt="" style="width: 10vw;"> 
 
             <div class="welcome-title">
-                <h2> ثبت نام!</h2>
+                <h2>گزارش تخلف!</h2>
                 <hr class="line">
             </div>
-            <form action="" id="register-form">
-                <div class="login-form" >
+            <form action=""></form>
+                <div class="login-form">
                     
-                    <div class="input-field"> 
-                        <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" name="name" id="name" style="max-width: 320px;">
-                        <label>نام</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">نام خودتون رو به فارسی وارد کنید</div>
-                    </div>
-
-                    <div class="input-field"> 
-                        <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" name="username" id="username" style="max-width: 320px;">
-                        <label>نام کاربری</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">فقط حروف انگلیسی اعداد و "_"</div>
-
-                        <datalist id="username_list">
-                            <option value="yasin_naqash">
-                            <option value="yazdan_naqash">
-                            <option value="neda_sadeghi">
-                            <option value="sadegh_ghlami">
-                            <option value="mahsa_amini">
-                        </datalist>
-                    </div>
-
-                    <!-- for phone number if they did not enter correct code for phone number their account should be deleted. -->
-                    <div class="input-field"> 
-                        <input required class="button-74" type="text" placeholder=" " autocomplete="off" name="phone" id="phone" style="max-width: 320px;">
-                        <label>شماره تلفن</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">شماره تلفن همراه 11 رقمی </div>
-                        <datalist id="phone_list">
-                            <option value="09380242434">
-                            <option value="09380022042">
-                            <option value="09395939990">
-                            <option value="09384535545">
-                            <option value="09982254978">
-                        </datalist>
-                    </div>
-                    <div class="input-field"> 
-                        <input required class="button-74" type="password" spellcheck="false" autocomplete="new-password" placeholder=" " autocomplete="off" name="username" id="pass1" style="max-width: 320px;">
-                        <label> رمز عبور</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">حد اقل 6 حد اکثر 12 فقط حروف انگلیسی و اعداد</div>
-                    </div>
-                    <div class="input-field"> 
-                        <input required class="button-74" type="password" spellcheck="false" autocomplete="new-password" placeholder=" " autocomplete="off" name="username" id="pass2" style="max-width: 320px;">
-                        <label>تکرار رمز عبور</label>
-                        <div class="info-icon">!</div>
-                        <div class="description-dialogue">حد اقل 6 حد اکثر 12 فقط حروف انگلیسی و اعداد</div>
-                    </div>
-
+                        <div class="input-field"> 
+                            <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" name="username" style="width: 100%; max-width: 320px;">
+                            <label>عنوان</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea class="button-74" placeholder=" " spellcheck="false" id="deal-description" name="deal-description" style="width: 100%; max-width: 240px;"></textarea>
+                            
+                            <label>توضیحات</label>
+                        </div>
+                        <div class="login-buttons">
+                            <button type="submit" class="button-74" style="min-width: fit-content;">ثبت</button>
+                            <a href="" class="button-74">بازگشت</a>
+                        </div>
                     
-                    <div class="login-buttons">
-                        <button type="submit" class="button-74" style="min-width: fit-content;"> تایید اطلاعات</button>
-                        <a href="login.html" class="button-74" style="min-width: fit-content;">ورود به حساب</a>
-                    </div>
-                    
-
                     
                 </div>
             </form>
-                
-           
         </section>
     </main>
 
@@ -253,8 +209,7 @@
         </div>
         <p style="direction: ltr; padding-bottom: 15px;" class="no-convert">©2024  BoardBazaar. All Rights Reserved.</p>
     </footer>
-    
+
     <script src="js/navbar.js"></script>
-    <script src="js/login.js"></script>
 </body>
 </html>
